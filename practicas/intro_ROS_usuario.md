@@ -18,10 +18,9 @@ A continuación veremos cómo ejecutar programas ROS en los simuladores y cómo 
 > ANTES de empezar con la práctica, **solo si estás usando los ordenadores del laboratorio**, abre una terminal y copia y pega estas instrucciones:
 
 ```bash
-echo "source $HOME/tb2_ws/devel_isolated/setup.bash" >> ~/.bashrc
 echo "source $HOME/ws_rviz_new/devel/setup.bash" >> ~/.bashrc
 ```
-> Y a continuación **cierra esta terminal y abre una nueva** para que los cambios tengan efecto. *EXPLICACIÓN: la primera línea añade soporte para el robot **turtlebot 2**, la segunda hace que se use una versión modificada de rviz para solucionar una incompatibilidad con las tarjetas gráficas del laboratorio. Si has instalado ROS en tu propio equipo con las instrucciones que damos en la asignatura, o bien usas la máquina virtual que proporcionamos, ya tendrás estas instrucciones en tu `.bashrc` y por tanto no son necesarias.*
+> Y a continuación **cierra esta terminal y abre una nueva** para que los cambios tengan efecto. *EXPLICACIÓN: la  línea hace que se use una versión modificada de rviz para solucionar una incompatibilidad con las tarjetas gráficas del laboratorio. Si has instalado ROS en tu propio equipo con las instrucciones que damos en la asignatura, o bien usas la máquina virtual que proporcionamos, esto no debería ser necesario* (aunque si tienes problemas con la utilidad `rviz` podrías intentarlo).
 
 
 ## Probando un robot en el simulador Stage
@@ -188,12 +187,16 @@ Los robots que tenemos en el laboratorio son de la generación anterior de Turtl
 El *package* `turtlebot_gazebo` contiene la simulación de los Turtlebot 2 para gazebo, podemos lanzar una simulación con un mundo predefinido escribiendo en una terminal:
 
 ```bash
+#carga los paquetes de turtlebot 2, que por defecto no están en Noetic
+source $HOME/tb2_ws/devel_isolated/setup.bash
+#lanza la simulación
 roslaunch turtlebot_gazebo turtlebot_world.launch
 ```
 
 Podemos mover al robot mediante el teclado con `turtlebot_teleop` (nótese que la orden es ligeramente distinta a la que usábamos con Turtlebot 3).
 
 ```bash
+source $HOME/tb2_ws/devel_isolated/setup.bash
 roslaunch turtlebot_teleop keyboard_teleop.launch
 ```
 
