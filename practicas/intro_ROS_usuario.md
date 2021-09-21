@@ -13,15 +13,18 @@ A continuación veremos cómo ejecutar programas ROS en los simuladores y cómo 
 - Nodo (*node*): Un nodo es un proceso que realiza algún tipo de compu- tación en el sistema. Los nodos se combinan dentro de un grafo, compar- tiendo información entre ellos, para crear ejecuciones complejas. Un nodo puede controlar un sensor láser, otro los motores de un robot y otro la construcción de mapas.
 - Pila (*stack*): Conjunto de nodos que juntos proporcionan alguna funcionalidad. Por ejemplo, la *pila de navegación* sirve para que el robot pueda moverse a un punto del mapa por la ruta más corta y evitando obstáculos por el camino.
 
-## Probando un robot en el simulador Stage
+## Configuración inicial para el laboratorio
 
 > ANTES de empezar con la práctica, **solo si estás usando los ordenadores del laboratorio**, abre una terminal y copia y pega estas instrucciones:
 
 ```bash
-echo "source $HOME/ws_rviz_new/devel/setup.bash" >> ~/.bashrc
 echo "source $HOME/tb2_ws/devel_isolated/setup.bash" >> ~/.bashrc
+echo "source $HOME/ws_rviz_new/devel/setup.bash" >> ~/.bashrc
 ```
-> Y a continuación **cierra esta terminal y abre una nueva** para que los cambios tengan efecto. *EXPLICACIÓN: la primera línea hace que se use una versión modificada de rviz para solucionar una incompatibilidad con las tarjetas gráficas del laboratorio, la segunda añade soporte para el robot **turtlebot 2**. Si has instalado ROS en tu propio equipo con las instrucciones que damos en la asignatura, o bien usas la máquina virtual que proporcionamos, ya tendrás estas instrucciones en tu `.bashrc` y por tanto no son necesarias.*
+> Y a continuación **cierra esta terminal y abre una nueva** para que los cambios tengan efecto. *EXPLICACIÓN: la primera línea añade soporte para el robot **turtlebot 2**, la segunda hace que se use una versión modificada de rviz para solucionar una incompatibilidad con las tarjetas gráficas del laboratorio. Si has instalado ROS en tu propio equipo con las instrucciones que damos en la asignatura, o bien usas la máquina virtual que proporcionamos, ya tendrás estas instrucciones en tu `.bashrc` y por tanto no son necesarias.*
+
+
+## Probando un robot en el simulador Stage
 
 Probar una aplicación por primera vez en un robot real suele ser problemático, ya que depurar el código es complicado y además el  robot podría sufrir daños si el código no funciona correctamente . Por eso la práctica habitual es probar el código primero en un simulador y luego trasladarlo al robot real cuando estamos razonablemente seguros de que va a funcionar.
 
@@ -119,11 +122,10 @@ rostopic echo /base_scan
 No obstante ver impresa la lista de números con las distancias no es muy intuitivo. En general es mucho mejor visualizar la información de los sensores en modo gráfico. Para ello disponemos en ROS de la herramienta `rviz`.
 
 ```bash
-source $HOME/ws_rviz_new/devel/setup.bash
 rosrun rviz rviz
 ```
 
-> **ACLARACION** la primera línea `source $HOME/...` **solo es necesaria en los ordenadores del laboratorio**, debido a una incompatibilidad con la tarjeta gráfica hay que usar una versión de `rviz` compilada especialmente.
+> **OJO** si no ha salido la ventana de rviz y en su lugar ha aparecido un error en rojo "Unable to create the rendering window..." junto con muchos más mensajes anteriores, es posible que no hayas hecho lo que pone en el apartado "Configuración inicial para el laboratorio".
 
 Al entrar en `rviz` lo primero es **cambiar en el panel izquierdo la opción `fixed frame` en las `Global Options`**. Este es el sistema de coordenadas que usará `rviz` para dibujar. Ahora está puesto a `map` y da un error porque eso sería para un mapa construido por el robot, cosa que no se ha hecho (lo haremos en una práctica posterior). Lo podéis cambiar por cualquiera de las otras opciones que sale al seleccionar el desplegable a la derecha de `fixed frame`, por ejemplo `odom`.
 
@@ -158,8 +160,6 @@ Para ver no solo la cámara sino también el resto de sensores (en el caso del T
 
 ```bash
 export TURTLEBOT3_MODEL=waffle
-#de nuevo, esta línea solo es necesaria en los ordenadores del laboratorio
-source $HOME/ws_rviz_new/devel/setup.bash
 roslaunch turtlebot3_gazebo turtlebot3_gazebo_rviz.launch
 ```
 
@@ -188,20 +188,17 @@ Los robots que tenemos en el laboratorio son de la generación anterior de Turtl
 El *package* `turtlebot_gazebo` contiene la simulación de los Turtlebot 2 para gazebo, podemos lanzar una simulación con un mundo predefinido escribiendo en una terminal:
 
 ```bash
-source $HOME/tb2_ws/devel_isolated/setup.bash
 roslaunch turtlebot_gazebo turtlebot_world.launch
 ```
 
 Podemos mover al robot mediante el teclado con `turtlebot_teleop` (nótese que la orden es ligeramente distinta a la que usábamos con Turtlebot 3).
 
 ```bash
-source $HOME/tb2_ws/devel_isolated/setup.bash
 roslaunch turtlebot_teleop keyboard_teleop.launch
 ```
 
 Si lanzáis la herramienta `rviz` en otra terminal como lo hacíamos con stage podréis ver gráficamente la información de los sensores del robot simulado.
 
 ```bash
-source $HOME/ws_rviz_new/devel/setup.bash
 rosrun rviz rviz
 ```
