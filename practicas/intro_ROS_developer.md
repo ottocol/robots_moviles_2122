@@ -1,8 +1,10 @@
-# Práctica 1. Introducción a ROS para desarrolladores
+# Práctica guiada 2. Introducción a ROS para desarrolladores
 
 Ya vimos los comandos más habituales en ROS y cómo lanzar nodos ya hechos. Aquí vamos a ver cómo crear nuestros propios nodos y organizarlos en paquetes. Usaremos Python en los ejemplos porque el código resulta más claro y se simplifica el proceso de desarrollo, pero también se puede programar usando C++.
 
-## *Workspaces* y *packages*
+> Por un *bug* en la instalación de los ordenadores del laboratorio, de momento no funciona lo de crear workspaces y packages (si tienes tu propia instalación de ROS sí debería hacerlo). No obstante eso no impide probar los programas en python, en realidad no necesitan estar dentro de ningún workspace. Si estás en un ordenador del laboratorio salta directamente al apartado 2.
+
+## 1. *Workspaces* y *packages*
 
 Nuestros programas ROS estarán contenidos en un paquete (*package*) que no es más que un conjunto de programas relacionados entre sí. En ROS hay multitud de paquetes ya implementados . Por ejemplo ya habeís visto `turtlebot_gazebo`, que da soporte para simular el robot turtlebot en Gazebo o `turtlebot_teleop` que permite mover el turtlebot con teclado o mando xbox.
 
@@ -46,7 +48,7 @@ Los paquetes residen el el directorio `src` del *workspace*
       catkin_create_pkg practica1 rospy std_msgs
       ```
 
-## Ejemplo productor/consumidor
+## 2. Ejemplo productor/consumidor
 
 Como ROS está basado en el paso de mensajes, algunos nodos publicarán mensajes y otros los consumirán, (aunque puede haber alguno que haga las dos cosas). Vamos a ver el típico ejemplo en el que un nodo produce mensajes y otro nodo los consume.
 
@@ -123,7 +125,7 @@ chmod ugo+x consumidor.py #una sola vez, para dar permisos de ejecución
 
 Si también está en marcha el `productor.py` deberían aparecer en pantalla los mensajes a medida que se van recibiendo.
 
-## Leyendo y publicando mensajes del robot
+## 3. Leyendo y publicando mensajes del robot
 
 Los ejemplos del apartado anterior son ilustrativos del funcionamiento básico de los mensajes en ROS, pero tienen poco que ver con robots. Vamos a ver ejemplos en los que leamos información de los sensores del robot y mandemos información a los efectores.
 
@@ -184,11 +186,9 @@ Como nuestro código depende del paquete `sensor_msgs` deberíamos **añadir en 
 <depend>sensor_msgs</depend>
 ```
 
-### Publicando mensajes para controlar los motores
+### 4. Publicando mensajes para controlar los motores
 
-Podemos controlar el movimiento del robot publicando mensajes en el *topic* `/mobile_base/commands/velocity`. Mediante el comando `rostopic info /mobile_base/commands/velocity`podremos ver que usa mensajes de tipo `geometry_msgs/Twist` y con `rosmsg show geometry_msgs/Twist` podemos ver la estructura del mensaje. 
-
-> En Turtlebot 3 el topic será `cmd/vel` en lugar de /mobile_base/commands/velocity`
+Podemos controlar el movimiento del robot publicando mensajes en el *topic* `/mobile_base/commands/velocity` (Turtlebot 2) o `cmd/vel` (Turtlebot3 o simulador Stage) . Mediante el comando `rostopic info <topic_del_motor>`podremos ver que usa mensajes de tipo `geometry_msgs/Twist` y con `rosmsg show geometry_msgs/Twist` podemos ver la estructura del mensaje. 
 
 Básicamente podemos fijar una velocidad lineal en x,y,z y también una velocidad angular con los mismos componentes. Al publicar un mensaje de este tipo en Turtlebot2 no dejamos fija la velocidad sino que pasado un breve espacio de tiempo la velocidad volverá a ser 0. En Turtlebot 3 la velocidad permanecerá constante. En el siguiente ejemplo podemos ver cómo mandar mensajes de este tipo desde Python:
 
