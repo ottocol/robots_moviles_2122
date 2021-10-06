@@ -100,7 +100,7 @@ from std_msgs.msg import String
 
 # Esta función es la que se ejecutará cada vez que se reciba un mensaje
 def callback(msg): 
-    print msg.data
+    print(msg.data)
 
 rospy.init_node('consumidor')
 # definimos un consumidor de mensajes. Parámetros:
@@ -173,7 +173,7 @@ def callback(msg):
             masCercano = lectura
         elif lectura>masLejano:
             masLejano = lectura    
-    print 'más cercano: ', masCercano, ' más lejano: ', masLejano
+    print('más cercano:', masCercano, 'más lejano:', masLejano)
 
 rospy.init_node('read_scan')
 sub = rospy.Subscriber('/scan', LaserScan, callback)
