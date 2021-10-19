@@ -86,7 +86,7 @@ Implementa el **modelo del sensor para un sensor basado en landmarks** como el q
 ```python
 def sensor_model(pose_robot, pose_landmark, d, alfa):
     """Devuelve la probabilidad de una medida del sensor, dada
-    una pose del robot, del landmark medido en el mapa, la distancia
+    una pose del robot, la del landmark en el mapa, la distancia
     medida y el ángulo medido
     Argumentos:
       pose_robot (Pose): posición actual del robot
@@ -94,12 +94,12 @@ def sensor_model(pose_robot, pose_landmark, d, alfa):
       d (float): distancia devuelta por el sensor
       alfa (float): ángulo devuelto por el sensor
     Devuelve
-      float: probabilidad de la medida
+      float: cantidad proporcional a la probabilidad de la medida
     """
     #TODO: falta implementar la función
     return 0
 ```
-Para probarlo haz un programa al que se le pueda pasar argumentos en línea de comandos con la pose del robot, del landmark, la distancia medida y el ángulo medido (ángulos en grados para que sea más intuitivo) e imprima en la consola la probabilidad.
+Para probarlo haz un programa al que se le pueda pasar argumentos en línea de comandos con la pose del robot, del landmark, la distancia medida y el ángulo medido (ángulos en grados para que sea más intuitivo) e imprima en la consola la probabilidad (como hemos visto en clase en realidad no será una probabilidad sino una cantidad proporcional a la verdadera probabilidad).
 
 ## Entrega de la práctica
 
