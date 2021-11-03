@@ -89,7 +89,7 @@ catkin_make_isolated
 Tardará un rato en compilar todos los fuentes. Una vez terminada la compilación, para terminar la configuración hay que hacer que tengamos accesibles los paquetes de Turtlebot2 cada vez que abrimos una terminal:
 
 ```bash
-echo "source /opt/ros/noetic/setup.bash" >> ~/.bashrc
+echo "$HOME/tb2_ws/devel_isolated/setup.bash" >> ~/.bashrc
 ```
 
 Cierra la terminal y abre una nueva para que los cambios tengan efecto (también puedes hacer `source ~/.bashrc`).
