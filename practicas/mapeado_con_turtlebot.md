@@ -96,15 +96,15 @@ En una **terminal conectada con el robot** haz:
 
 ```bash
 export TURTLEBOT_3D_SENSOR=astra
-roslaunch turtlebot_navigation amcl_demo.launch map_file:=fichero_mapa.yaml
+roslaunch turtlebot_navigation amcl_demo.launch map_file:=/home/turtlebot/fichero_de_tu_mapa.yaml
 ```
 
 donde: 
 
-- sustituye "fichero_mapa" por el nombre de tu mapa
-- tienes que poner la **trayectoria completa** desde la raíz del disco para que ROS lo localice. El directorio HOME del robot es `/home/turtlebot`
+- sustituye "fichero_de_tu_mapa" por el nombre de tu mapa
+- Fíjate en que tienes que poner la **trayectoria completa** desde la raíz del disco para que ROS lo localice. El directorio HOME del robot es `/home/turtlebot`
 
-> IMPORTANTE: fijar en RViz como sistema de coordenadas `fixed frame` -> `map`
+> IMPORTANTE: para visualizar correctamente lo que sigue, fijar en RViz como sistema de coordenadas `fixed frame` -> `map`
 
 Para que el algoritmo de localización funcione **tienes que dar una estimación de la posición inicial en RViz**. 
 
