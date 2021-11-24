@@ -66,10 +66,6 @@ Puedes probar a mover el robot para ver cómo cambian las lecturas. **En una ter
 
 ## Mapeado con teleoperación
 
-- para ver las partículas: display de tipo `PoseArray`. topic `/particlecloud`
-- para ver el path planificado: display de tipo `Path`, topic `/move_base/NavfnROS/plan`
-- Hay que ver cuáles son los topics para los costmap
-
 En **una terminal en el robot**, lanza la teleoperación si no lo has hecho ya (`roslaunch turtlebot_teleop keyboard_teleop.launch`)
 
 En otra **terminal del robot**, para crear el mapa escribe:
