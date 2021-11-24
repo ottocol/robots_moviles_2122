@@ -11,7 +11,7 @@ Los objetivos son:
 
 ## Conexión con el robot
 
-> **IMPORTANTE**: en este modo de conexión que usaremos hoy **necesitáis ROS instalado en el PC. Lo mejor es que uséis los equipos de los laboratorios. Usad los ordenadores 3,4,8,11 y 15, que tienen conexión wifi**. 
+> **IMPORTANTE**: en este modo de conexión que usaremos hoy **necesitáis ROS instalado en el PC. Lo mejor es que uséis los equipos de los laboratorios. Usad los ordenadores 3,4,8,12 y 15, que tienen conexión wifi**. 
 
 En el modo cliente/servidor, el cliente es nuestro PC y el servidor el robot. Hay algunos nodos de ROS que deben correr en el servidor (por ejemplo el `turtlebot_bringup.launch`) y otros en nuestro PC (por ejemplo `RViz`). En otros es indiferente.
 
