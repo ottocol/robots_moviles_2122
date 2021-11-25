@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>Introducción a la navegación. Planificación global</title>
+
+    <link rel="stylesheet" href="../../reveal.js-4.1.1/dist/reveal.css">
+    <link rel="stylesheet" href="../../reveal.js-4.1.1/dist/theme/robots_moviles.css">
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="../../reveal.js-4.1.1/plugin/highlight/monokai.css">
+    <script src="plugin/chalkboard/plugin.js"></script>
+
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section data-markdown="intro_y_planificacion_global.md" data-separator-notes="^Notas:"></section>
+      </div>
+    </div>
+
+    <script src="../../reveal.js-4.1.1/dist/reveal.js"></script>
+    <script src="../../reveal.js-4.1.1/plugin/markdown/markdown.js"></script>
+    <script src="../../reveal.js-4.1.1/plugin/highlight/highlight.js"></script>
+    <script src="../../reveal.js-4.1.1/plugin/zoom/zoom.js"></script>
+	  <script src="../../reveal.js-4.1.1/plugin/math/math.js"></script>
+    <script src="../../reveal.js-4.1.1/plugin/menu/menu.js"></script>
+    <script src="../../reveal.js-4.1.1/plugin/chalkboard/plugin.js"></script>
+
+
+
+    <script>
+      // More info about config & dependencies:
+      // - https://github.com/hakimel/reveal.js#configuration
+      // - https://github.com/hakimel/reveal.js#dependencies
+      Reveal.initialize({
+        history: true,
+        zoomLevel: 1.5,
+        plugins: [
+          RevealMarkdown, RevealHighlight, RevealZoom, RevealMenu, RevealChalkboard, RevealMath 
+        ],
+        chalkboard: {
+          toggleChalkboardButton: { left: "80px" },
+          toggleNotesButton: { left: "130px" }
+        }
+      });
+      Reveal.configure({ 
+        slideNumber: 'c/t'
+      });
+
+    </script>
+  </body>
+</html>
