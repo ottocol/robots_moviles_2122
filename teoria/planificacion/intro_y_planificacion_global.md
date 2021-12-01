@@ -183,9 +183,22 @@ A* tiene la ventaja de que *en promedio* es más eficiente que Dijkstra. Será m
 
 ---
 
+## Heurísticas para A*
+
+
+- En rejillas 4-conectadas: distancia de Manhattan
+- En rejillas 8-conectadas: distancia euclídea, distancia "octile"
+
+![](imag/manhattan.svg) <!-- .element: class="column third" -->
+![](imag/euclidea.svg) <!-- .element: class="column third" -->
+![](imag/octile.svg) <!-- .element: class="column third" -->
+
+---
+
 ## Pseudocódigo A*
 
 ![](imag/8nAs8.png) <!-- .element: class="stretch" -->
+
 
 ---
 
