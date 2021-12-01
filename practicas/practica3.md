@@ -192,8 +192,8 @@ Si tomáis código de otros **debéis referenciar en la memoria la fuente origin
 - Para una nota **superior a 7**, vuestra tarea debería ser original como en el caso anterior y además cumplir alguna de las siguientes condiciones: 
     - **(hasta 1 punto)** Usar alguna librería de máquinas de estados finitos como FlexBE o SMACH.
     - **(hasta 1 punto)** Que alguna subtarea haga uso de visión: colores, formas, reconocimiento de objetos. Podéis usar cualquier paquete ROS/librería de terceros que encontréis. La nota dependerá de la dificultad de uso y también de la experimentación realizada. 
-    - **(hasta 1 punto)** Que hayáis probado la práctica en los turtlebot reales. Aunque no podáis hacer que funcione toda la práctica se valorará que funcione al menos alguna subtarea 
-    - **(hasta 1 punto)** Que subáis vuestra práctica a Github o similar para que cualquiera pueda probarla, deberíais subir el código, algún video de demostración y instrucciones detalladas en el `README.md` de cómo ponerla en marcha
+    - **(hasta 1.5 puntos)** Que hayáis probado la práctica en los turtlebot reales. Aunque no podáis hacer que funcione toda la práctica se valorará que funcione al menos alguna subtarea 
+    - **(hasta 0.5 puntos)** Que subáis vuestra práctica a Github o similar para que cualquiera pueda probarla, deberíais subir el código, algún video de demostración y instrucciones detalladas en el `README.md` de cómo ponerla en marcha
     - Podéis proponer cualquier otra ampliación que se os ocurra, consultadla antes con el profesor para ver cuánto se podría valorar en el baremo  
 
 ### Plazo y procedimiento de entrega
