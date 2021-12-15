@@ -100,6 +100,7 @@ En este ejemplo podéis ver cómo decirle al robot que navegue hasta un determin
 import rospy
 import actionlib
 from move_base_msgs.msg import MoveBaseAction, MoveBaseGoal
+from actionlib_msgs.msg import GoalStatus
 import sys
 
 #Uso de la acción move_base en ROS para moverse a un punto determinado
