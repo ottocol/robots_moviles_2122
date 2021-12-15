@@ -200,6 +200,6 @@ Si tomáis código de otros **debéis referenciar en la memoria la fuente origin
 
 ### Plazo y procedimiento de entrega
 
-- La práctica se podrá entregar **hasta las 23:59 horas del viernes 14 de enero de 2022**.
+- La práctica se podrá entregar **hasta las 23:59 horas del  ~~viernes 14 de enero de 2022~~ lunes 17 de enero de 2022**
 - La entrega se realizará a través del moodle en un fichero .zip. Como el tamaño máximo de la entrega son 20Mb si queréis añadir recursos adicionales
 
